@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -291,7 +292,8 @@
 
 
     <div class="image-container">
-        <img class="big-image" src="Image/Big.png" alt="Big Image">
+        <img class="big-image" src="Image/Big.png" alt="Big Image" id="Big">
+        <img class="big-image" src="Image/Big-2.png" id="Big-phone">
         <div class="overlay">
             <div class="overlay-text">Споделете мислите <br> и чувствата си с нас.</div>
             <div class="overlay-text-new">Ние не съдим, а подкрепяме</div>
@@ -303,17 +305,122 @@
     </div>
 
 
-
-<div id="comments-section">
-    <div id="comments-list"></div>
-    <div id="comment-form">
-        <input type="text" id="name-input" placeholder="Име">
-        <input type="email" id="email-input" placeholder="Имейл">
-        <textarea id="message-input" placeholder="Вашият коментар"></textarea>
-        <button onclick="addComment()">Добави коментар</button>
+<section class="Comments">
+<div class="block">
+    <div class="block-header">
+        <div class="title">
+            <h2>Comments</h2>
+            <div class="tag">12</div>
+        </div>
+        <div class="group-radio">
+			<span class="button-radio">
+				<input id="latest" name="latest" type="radio" checked>
+				<label for="latest">Latest</label>
+			</span>
+            <div class="divider"></div>
+            <span class="button-radio">
+				<input id="popular" name="latest" type="radio">
+				<label for="popular">Popular</label>
+			</span>
+        </div>
+    </div>
+    <div class="writing">
+        <div contenteditable="true" class="textarea" autofocus spellcheck="false">
+            <p>Hi <a class="tagged-user">@Jo</a></p>
+        </div>
+        <div class="footer">
+            <div class="text-format">
+                <button class="btn"><i class="ri-bold"></i></button>
+                <button class="btn"><i class="ri-italic"></i></button>
+                <button class="btn"><i class="ri-underline"></i></button>
+                <button class="btn"><i class="ri-list-unordered"></i></button>
+            </div>
+            <div class="group-button">
+                <button class="btn"><i class="ri-at-line"></i></button>
+                <button class="btn primary">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="comment">
+        <div class="user-banner">
+            <div class="user">
+                <div class="avatar">
+                    <img src="https://randomuser.me/api/portraits/men/86.jpg">
+                    <span class="stat grey"></span>
+                </div>
+                <h5>Floyd Miles</h5>
+            </div>
+            <button class="btn dropdown"><i class="ri-more-line"></i></button>
+        </div>
+        <div class="content">
+            <p>Actually, now that I try out the links on my message, above, none of them take me to the secure site. Only my shortcut on my desktop, which I created years ago.</p>
+        </div>
+        <div class="footer">
+            <button class="btn"><i class="ri-emotion-line"></i></button>
+            <div class="reactions">
+                <button class="btn react"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png" alt="">4</button>
+                <button class="btn react"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/angry-face-with-horns_1f47f.png" alt="">1</button>
+            </div>
+            <div class="divider"></div>
+            <a href="#">Reply</a>
+            <div class="divider"></div>
+            <span class="is-mute">6 hour</span>
+        </div>
+    </div>
+    <div>
+        <div class="comment">
+            <div class="user-banner">
+                <div class="user">
+                    <div class="avatar" style="background-color:#fff5e9;border-color:#ffe0bd; color:#F98600">
+                        AF
+                        <span class="stat green"></span>
+                    </div>
+                    <h5>Albert Flores</h5>
+                </div>
+                <button class="btn dropdown"><i class="ri-more-line"></i></button>
+            </div>
+            <div class="content">
+                <p>Before installing this plugin please put back again your wordpress and site url back to http.</p>
+            </div>
+            <div class="footer">
+                <button class="btn"><i class="ri-emotion-line"></i></button>
+                <div class="divider"></div>
+                <a href="#">Reply</a>
+                <div class="divider"></div>
+                <span class="is-mute">2 min</span>
+            </div>
+        </div>
+        <div class="reply comment">
+            <div class="user-banner">
+                <div class="user">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1510227272981-87123e259b17?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=3759e09a5b9fbe53088b23c615b6312e" alt="">
+                        <span class="stat green"></span>
+                    </div>
+                    <h5>Bessie Cooper</h5>
+                </div>
+                <button class="btn dropdown"><i class="ri-more-line"></i></button>
+            </div>
+            <div class="content">
+                <p>Hi <a href="#" class="tagged-user">@Albert Flores</a>.Thanks for your reply.</p>
+            </div>
+            <div class="footer">
+                <button class="btn"><i class="ri-emotion-line"></i></button>
+                <div class="reactions">
+                    <button class="btn react"><img src="https://cdn-0.emojis.wiki/emoji-pics/apple/smiling-face-with-heart-eyes-apple.png" alt="">2</button>
+                </div>
+                <div class="divider"></div>
+                <a href="#">Reply</a>
+                <div class="divider"></div>
+                <span class="is-mute">18 sec</span>
+            </div>
+        </div>
+    </div>
+    <div class="load">
+        <span><i class="ri-refresh-line"></i>Loading</span>
     </div>
 </div>
-
+</section>
 
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
