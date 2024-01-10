@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+  <link rel="stylesheet" href="Style/About%20Us.css">
+  <link rel="stylesheet" href="Style/Navbar-phone.css">
+  <link rel="stylesheet" href="Style/Navbar.css">
+</head>
+<body>
+
+<nav class="nav">
+  <i class="uil uil-bars navOpenBtn"></i>
+
+
+  <a href="index.html" class="hl"></a>
+
+  <ul id="navbar" class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <li class="active"><a href="index.html">Начало</a></li>
+    <li class="dropdown">
+      <a class="drop" href="#">Проект</a>
+      <div class="dropdown-content">
+        <a href="Proekt.html" class="drop">Сподели</a>
+        <a href="" class="drop">Информация</a>
+      </div>
+    </li>
+    <li><a href="Gallery.html">Галерия</a></li>
+    <li><a href="Contact.html">Контакти</a></li>
+    <li><a href="About%20Us.html">За нас</a></li>
+  </ul>
+
+  <i class="uil uil-search search-icon" id="searchIcon"></i>
+  <div class="search-box">
+    <i class="uil uil-search search-icon"></i>
+    <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Search here..." />
+    <ul id="myUL">
+
+    </ul>
+  </div>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</nav>
+
+
+
+<nav class="menu" style="--hue: 200.48724706615747">
+  <input class="menu__toggle" type="checkbox" id="menu-toggle"/>
+  <label class="menu__toggle-label" for="menu-toggle"></label>
+  <label class="menu__toggle-label menu__toggle-label--closer" for="menu-toggle">
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+    </svg>
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+    </svg>
+  </label>
+  <ul class="menu__content">
+    <li class="menu__item" style="--x: 20; --y: 15;"><a class="menu__link" href="index.html">Начало</a></li>
+    <li class="menu__item" style="--x: 52; --y: 24;"><a class="menu__link" href="">Проект</a></li>
+    <li class="menu__item" style="--x: 33; --y: 40;"><a class="menu__link" href="Gallery.html">Галерия</a></li>
+    <li class="menu__item" style="--x: 50; --y: 56;"><a class="menu__link" href="Contact.html">Контакти</a></li>
+    <li class="menu__item" style="--x: 72; --y: 72;"><a class="menu__link" href="About%20Us.html">За нас</a></li>
+  </ul>
+</nav>
+
+
+
+
+<div class="responsive-container-block bigContainer">
+  <div class="responsive-container-block Container">
+    <div class="imgContainer">
+      <img class="blueDots" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/aw3.svg">
+      <img class="mainImg" src="Image/About-Us-Special.png">
+    </div>
+    <div class="responsive-container-block textSide">
+      <p class="text-blk heading">
+        За нас
+      </p>
+      <p class="text-blk subHeading">
+        Ние сме Кадир Язаджи и Екатерина Маркова, ученици от ПГИ "Иван Илиев" - Благоевград. Чрез набор от умения в различните дисциплини, превърщаме една идея нужна на обществото в реалност. Нашата идея се състои в това да създадем така наречената "Кутия на неизказаните мисли", обаче съвместима с ръстовете на развитие на днешния свят, което означава изцяло дигитализиране на идеята.
+        <br>
+        <br>
+        <b>Чрез нашия проект ще се постигне:</b>
+      </p>
+
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="Image/About-Us-Icon-1.png">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+           Творчесто
+          </p>
+          <p class="text-blk cardSubHeading">
+            Ние ще подбудим развитие на творчесто у хората.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="Image/About-Us-Icon-2.png">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Свобода
+          </p>
+          <p class="text-blk cardSubHeading">
+             Изразяването без ограничения е основанта ни цел.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="Image/About-Us-Icon-3.png">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+           Анонимност
+          </p>
+          <p class="text-blk cardSubHeading">
+           За да се избегне притестението при нас всичко може да бъде анонимно.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="Image/About-Us-Icon-4.png">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Емпатия
+          </p>
+          <p class="text-blk cardSubHeading">
+            Хората ще се научат да разбират историите и преживяванията на другите.
+          </p>
+        </div>
+      </div>
+      <a>
+        <button class="explore">
+          Към начало
+        </button>
+      </a>
+    </div>
+    <img class="redDots" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/cw3.svg">
+  </div>
+</div>
+<div class="map-responsive">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.8951243077468!2d23.09404517551159!3d42.00252627122838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aa58b26d3d2289%3A0xf6ce5a99f95ebdef!2z0J_RgNC-0YTQtdGB0LjQvtC90LDQu9C90LAg0LPQuNC80L3QsNC30LjRjyDQv9C-INC40LrQvtC90L7QvNC40LrQsCDigJ7QmNCy0LDQvSDQmNC70LjQtdCy4oCc!5e0!3m2!1sbg!2sbg!4v1698179225461!5m2!1sbg!2sbg" ></iframe>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+</html>

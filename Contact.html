@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+  <link rel="stylesheet" href="Style/Contact.css">
+  <link rel="stylesheet" href="Style/Navbar-phone.css">
+  <link rel="stylesheet" href="Style/Navbar.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+
+<nav class="nav">
+  <i class="uil uil-bars navOpenBtn"></i>
+
+
+  <a href="index.html" class="hl"></a>
+
+  <ul id="navbar" class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <li class="active"><a href="index.html">Начало</a></li>
+    <li class="dropdown">
+      <a class="drop" href="#">Проект</a>
+      <div class="dropdown-content">
+        <a href="Proekt.html" class="drop">Сподели</a>
+        <a href="" class="drop">Информация</a>
+      </div>
+    </li>
+    <li><a href="Gallery.html">Галерия</a></li>
+    <li><a href="Contact.html">Контакти</a></li>
+    <li><a href="About%20Us.html">За нас</a></li>
+  </ul>
+
+  <i class="uil uil-search search-icon" id="searchIcon"></i>
+  <div class="search-box">
+    <i class="uil uil-search search-icon"></i>
+    <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Search here..." />
+    <ul id="myUL">
+
+    </ul>
+  </div>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</nav>
+
+
+
+<nav class="menu" style="--hue: 200.48724706615747">
+  <input class="menu__toggle" type="checkbox" id="menu-toggle"/>
+  <label class="menu__toggle-label" for="menu-toggle"></label>
+  <label class="menu__toggle-label menu__toggle-label--closer" for="menu-toggle">
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+    </svg>
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+    </svg>
+  </label>
+  <ul class="menu__content">
+    <li class="menu__item" style="--x: 20; --y: 15;"><a class="menu__link" href="index.html">Начало</a></li>
+    <li class="menu__item" style="--x: 52; --y: 24;"><a class="menu__link" href="">Проект</a></li>
+    <li class="menu__item" style="--x: 33; --y: 40;"><a class="menu__link" href="Gallery.html">Галерия</a></li>
+    <li class="menu__item" style="--x: 50; --y: 56;"><a class="menu__link" href="Contact.html">Контакти</a></li>
+    <li class="menu__item" style="--x: 72; --y: 72;"><a class="menu__link" href="About%20Us.html">За нас</a></li>
+  </ul>
+</nav>
+
+<section class="BigContainer">
+  <div class="big-popup">
+    <div class="popup">
+      <span class="material-symbols-outlined">done</span>
+      <h2>Thanks</h2>
+      <p>Your response has been submitted!</p>
+      <button type="button">OK</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="form-container">
+      <div class="left-container" id="left-container">
+        <div class="left-inner-container">
+          <h2>Свържете се с нас</h2>
+          <p>Не се колебайте да се свържете с нас при възникнали въпроси от ваша страна, ние ще ви отговорим с удолствие.</p>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="right-inner-container">
+          <form id="contactForm">
+            <h2 class="lg-view">Контакти</h2>
+            <h2 class="sm-view">Let's Chat</h2>
+            <p>* Required</p>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <input type="text" id="name" placeholder="Name *" />
+            <p id="nameError" class="error-text"></p>
+
+            <input type="email" id="email" placeholder="Email *" />
+            <p id="emailError" class="error-text"></p>
+
+
+            <input type="tel" id="phone" placeholder="Phone *" />
+            <p id="phoneError" class="error-text"></p>
+
+            <textarea id="message" rows="9" placeholder="Message *"></textarea>
+            <p id="messageError" class="error-text"></p>
+
+            <button type="button" onclick="validateForm()">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="Script/Contact.js"></script>
+</html>
