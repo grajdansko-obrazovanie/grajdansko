@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="Style/Proekt.css">
+  <link rel="stylesheet" href="Style/Page.css">
+  <link rel="stylesheet" href="Style/Navbar.css">
+  <link rel="stylesheet" href="Style/Navbar-phone.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<nav class="nav">
+  <i class="uil uil-bars navOpenBtn"></i>
+
+
+  <a href="index.html" class="hl"></a>
+
+  <ul id="navbar" class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <li class="active"><a href="index.html">Начало</a></li>
+    <li class="dropdown">
+      <a class="drop" href="#">Проект</a>
+      <div class="dropdown-content">
+        <a href="Proekt.html" class="drop">Сподели</a>
+        <a href="" class="drop">Информация</a>
+      </div>
+    </li>
+    <li><a href="Gallery.html">Галерия</a></li>
+    <li><a href="Contact.html">Контакти</a></li>
+    <li><a href="About%20Us.html">За нас</a></li>
+  </ul>
+
+  <i class="uil uil-search search-icon" id="searchIcon"></i>
+  <div class="search-box">
+    <i class="uil uil-search search-icon"></i>
+    <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Search here..." />
+    <ul id="myUL">
+
+    </ul>
+  </div>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</nav>
+
+
+
+<nav class="menu" style="--hue: 200.48724706615747">
+  <input class="menu__toggle" type="checkbox" id="menu-toggle"/>
+  <label class="menu__toggle-label" for="menu-toggle"></label>
+  <label class="menu__toggle-label menu__toggle-label--closer" for="menu-toggle">
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+    </svg>
+    <svg class="menu__icon" preserveAspectRatio="xMinYMin" viewBox="0 0 24 24">
+      <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+    </svg>
+  </label>
+  <ul class="menu__content">
+    <li class="menu__item" style="--x: 20; --y: 15;"><a class="menu__link" href="index.html">Начало</a></li>
+    <li class="menu__item" style="--x: 52; --y: 24;"><a class="menu__link" href="">Проект</a></li>
+    <li class="menu__item" style="--x: 33; --y: 40;"><a class="menu__link" href="Gallery.html">Галерия</a></li>
+    <li class="menu__item" style="--x: 50; --y: 56;"><a class="menu__link" href="Contact.html">Контакти</a></li>
+    <li class="menu__item" style="--x: 72; --y: 72;"><a class="menu__link" href="About%20Us.html">За нас</a></li>
+  </ul>
+</nav>
+
+
+<div class="Big-Container">
+<div id="blur-background"></div>
+<div id="popup-container">
+  <span id="close-popup" onclick="togglePopup()">X</span>
+  <i class="fa fa-info-circle info-icon"></i>
+  <div id="info-modal">
+    <i class="fa fa-info-circle"></i>
+    <p class="information-form-text">Ако не желаете да разкривате истинското си име, моля попълнете полето със случаен текст или прякор, които да не надвишават 15 символа, за да може информацията да бъде вписана.</p>
+  </div>
+  <form action="connect.php" method="post" >
+    <label for="name">Name:</label>
+    <input oninput="validateInputName()" type="text" id="name" name="name" placeholder="Name*" required>
+    <p id="NameError" class="error-text"></p>
+    <br>
+    <i class="fa fa-info-circle info-icon"></i>
+    <div id="info-modal-New">
+      <i class="fa fa-info-circle"></i>
+      <p class="information-form-text">Задължително е полето да бъде попълнено с адекватна информация, която е препоръчително да не съдържа нецензурни изрази или думи.</p>
+    </div>
+    <label for="message">Message:</label>
+    <textarea oninput="validateInputMessage()" id="message-input" placeholder="Message*" name="message" required></textarea>
+    <p id="MessageError" class="error-text"></p>
+    <br>
+    <input id="submitInput" onsubmit="sendEmail()" onclick="validateNewForm()" type="submit" class="ModalButton" value="Submit">
+  </form>
+</div>
+
+  <div class="left-big-container">
+    <div id="login" class="modal fade" role="dialog">
+      <div class="containerSignUp">
+        <div class="form-container sign-in-container">
+          <form action="#" class="signUpForm">
+            <h1>Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><img class="media-icon" src="Image/facebook.png"></a>
+              <a href="#" class="social"><img class="media-icon" src="Image/google.png"></a>
+              <a href="#" class="social"><img class="media-icon" src="Image/linkedin.png"></a>
+            </div>
+            <span>or use your account</span>
+            <input oninput="validateInputEmail()" class="SignUpInput" id="emailForm" type="email" placeholder="Email*" required>
+            <p id="emailError" class="error-text"></p>
+            <input oninput="validateInputPassword()" class="SignUpInput" id="passwordForm" type="password" placeholder="Password*" required pattern=".{6,}">
+            <p id="passwordError" class="error-text"></p>
+            <a href="#">Forgot your password?</a>
+            <button type="submit" onclick="validateForm()" id="SubmitForm" class="SignIn" >Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="right-big-container">
+  <div id="speech-bubble-container" class="speech-bubble-container">
+    <div id="speech-bubble" class="speech-bubble">
+      <img id="imagebubble" class="bubble-image" src="">
+    </div>
+  </div>
+  <div id="cloud" class='cloud1'>
+    <div class="cloud1__face"><span></span><span></span></div>
+    <div class="cloud1__clouds1">
+      <span></span>
+    </div>
+    <div class="cloud1__clouds2">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="cloud1__clouds3">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="cloud1__clouds4">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="cloud1__clouds5">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="cloud1__rain">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="cloud1__lightning">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+<div class = "container">
+  <div class = "cat">
+    <div class = "face">
+      <div class = "ear-1">
+        <div class = "inner-1"></div>
+      </div>
+      <div class = "ear-r">
+        <div class = "inner-2"></div>
+      </div>
+      <div class = "eye-1">
+        <div class = "eyeball"></div>
+      </div>
+      <div class = "eye-r">
+        <div class = "eyeball"></div>
+      </div>
+      <div class = "nose">
+        <div class = "l1"></div>
+        <div class = "l2"></div>
+      </div>
+    </div>
+    <div class = "body">
+      <div class = "paw-1"></div>
+      <div class = "paw-2"></div>
+      <div class = "tail"></div>
+    </div>
+    <div class = "shadow"></div>
+  </div>
+</div>
+
+<div class="envelope-wrapper">
+  <div id="envelope" onclick="togglePopup()" class="close">
+    <div class="front flap"></div>
+    <div class="front pocket"></div>
+    <div class="letter">
+      <div class="words line1"></div>
+      <div class="words line2"></div>
+      <div class="words line3"></div>
+      <div class="words line4"></div>
+    </div>
+    <div class="hearts">
+      <div class="heart a1"></div>
+      <div class="heart a2"></div>
+      <div class="heart a3"></div>
+    </div>
+    <p class="information-text">*Click to open modal form</p>
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script type="text/javascript" src="Script/Proekt.js"></script>
+</html>
